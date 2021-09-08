@@ -5,14 +5,12 @@ import { AppComponent } from './app.component';
 import { TopbarComponent } from './navegacao/menu/topbar/topbar.component';
 import { HorizontalComponent } from './navegacao/menu/horizontal/horizontal.component';
 import { CadastroComponent } from './veiculos/cadastro/cadastro.component';
-import { ListaComponent } from './veiculos/lista/lista.component';
 import { VendedoresComponent } from './Cadastros/vendedores/vendedores.component';
 import { VendedoresListaComponent } from './Cadastros/vendedores-lista/vendedores-lista.component';
 import { ParceiroCadastroComponent } from './Cadastros/parceiro-cadastro/parceiro-cadastro.component';
 import { ParceirosListaComponent } from './Cadastros/parceiros-lista/parceiros-lista.component';
 import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
-import { RouterModule } from '@angular/router';
-import { rootRouterConfig } from './app-route';
+import { AppRoutingModule } from './app-route';
 import { APP_BASE_HREF } from '@angular/common';
 import { NavigationModule } from './navegacao/navigation.module';
 
@@ -22,20 +20,18 @@ import { NavigationModule } from './navegacao/navigation.module';
     TopbarComponent,
     HorizontalComponent,
     CadastroComponent,
-    ListaComponent,
     VendedoresComponent,
     VendedoresListaComponent,
     ParceiroCadastroComponent,
     ParceirosListaComponent,
-    DashboardComponent
-  ],
+    DashboardComponent],
   imports: [
     BrowserModule,
     NavigationModule,
-    [RouterModule.forRoot(rootRouterConfig, {useHash: false})]
+    AppRoutingModule
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/'}
+    { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
 })
